@@ -7,6 +7,9 @@
     <Compile Update="Vistas\CrearOPVista.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Vistas\GestionarOpVista.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Vistas\MenuPrincipalVista.cs">
       <SubType>Form</SubType>
     </Compile>

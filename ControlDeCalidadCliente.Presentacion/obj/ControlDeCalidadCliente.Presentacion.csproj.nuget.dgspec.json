@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\marti\\Documents\\General\\Repos\\ControlDeCalidad\\Clientes\\Supervisor de Calidad\\ControlDeCalidadCliente\\ControlDeCalidadCliente.Presentacion\\ControlDeCalidadCliente.Presentacion.csproj": {}
+    "C:\\Users\\Martin\\Documents\\General\\Repos\\Control de Calidad\\Clientes\\Supervisor de Linea\\CdC-SupervisorDeLinea\\ControlDeCalidadCliente.Presentacion\\ControlDeCalidadCliente.Presentacion.csproj": {}
   },
   "projects": {
-    "C:\\Users\\marti\\Documents\\General\\Repos\\ControlDeCalidad\\Clientes\\Supervisor de Calidad\\ControlDeCalidadCliente\\ControlDeCalidadCliente.Presentacion\\ControlDeCalidadCliente.Presentacion.csproj": {
+    "C:\\Users\\Martin\\Documents\\General\\Repos\\Control de Calidad\\Clientes\\Supervisor de Linea\\CdC-SupervisorDeLinea\\ControlDeCalidadCliente.Presentacion\\ControlDeCalidadCliente.Presentacion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\marti\\Documents\\General\\Repos\\ControlDeCalidad\\Clientes\\Supervisor de Calidad\\ControlDeCalidadCliente\\ControlDeCalidadCliente.Presentacion\\ControlDeCalidadCliente.Presentacion.csproj",
+        "projectUniqueName": "C:\\Users\\Martin\\Documents\\General\\Repos\\Control de Calidad\\Clientes\\Supervisor de Linea\\CdC-SupervisorDeLinea\\ControlDeCalidadCliente.Presentacion\\ControlDeCalidadCliente.Presentacion.csproj",
         "projectName": "ControlDeCalidadCliente.Presentacion",
-        "projectPath": "C:\\Users\\marti\\Documents\\General\\Repos\\ControlDeCalidad\\Clientes\\Supervisor de Calidad\\ControlDeCalidadCliente\\ControlDeCalidadCliente.Presentacion\\ControlDeCalidadCliente.Presentacion.csproj",
-        "packagesPath": "C:\\Users\\marti\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\marti\\Documents\\General\\Repos\\ControlDeCalidad\\Clientes\\Supervisor de Calidad\\ControlDeCalidadCliente\\ControlDeCalidadCliente.Presentacion\\obj\\",
+        "projectPath": "C:\\Users\\Martin\\Documents\\General\\Repos\\Control de Calidad\\Clientes\\Supervisor de Linea\\CdC-SupervisorDeLinea\\ControlDeCalidadCliente.Presentacion\\ControlDeCalidadCliente.Presentacion.csproj",
+        "packagesPath": "C:\\Users\\Martin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Martin\\Documents\\General\\Repos\\Control de Calidad\\Clientes\\Supervisor de Linea\\CdC-SupervisorDeLinea\\ControlDeCalidadCliente.Presentacion\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\marti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Martin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +55,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -67,7 +68,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }

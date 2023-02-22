@@ -20,17 +20,16 @@ namespace ControlDeCalidadCliente.Presentacion.Presentadores
         public List<ModeloDTO> Modelos { get; set; }
         public List<ColorDTO> Colores { get; set; }
         public List<LineaDeTrabajoDTO> Lineas { get; set; }
-        // Y Lineas
 
         private async void ObtenerModelosYColores()
         {
             try
             {
-                Lineas = await Cliente.Instancia.GetTodoAsync<LineaDeTrabajoDTO>("api/Lineas");
+                Lineas = await Cliente.Instancia.GetTodoAsync<LineaDeTrabajoDTO>("api/Lineas/ObtenerLineas");
                 Vista.PoblarComboBoxLineas();
-                Modelos = await Cliente.Instancia.GetTodoAsync<ModeloDTO>("api/Modelos");
+                Modelos = await Cliente.Instancia.GetTodoAsync<ModeloDTO>("api/Modelos/ObtenerModelos");
                 Vista.PoblarComboBoxModelos();
-                Colores = await Cliente.Instancia.GetTodoAsync<ColorDTO>("api/Colores");
+                Colores = await Cliente.Instancia.GetTodoAsync<ColorDTO>("api/Colores/ObtenerColores");
                 Vista.PoblarComboBoxColores();
             }
             catch (Exception exc)
@@ -48,7 +47,7 @@ namespace ControlDeCalidadCliente.Presentacion.Presentadores
                 // Podria sacarse del combobox
                 //string numeroDeLinea = ConfigurationManager.AppSettings.Get("NumeroDeLinea");
 
-                string uri = $"api/Ordenes?numOP={numeroOp}&sku={sku}&codColor={codigo}&numLinea={numeroDeLinea}&supDNI={dni}";
+                string uri = $"api/Ordenes/CrearOP?numOP={numeroOp}&sku={sku}&codColor={codigo}&numLinea={numeroDeLinea}&supDNI={dni}";
                 await Cliente.Instancia.AgregarAsync(uri);
 
                 Vista.MostrarMensaje("Operacion Exitosa", $"Orden de produccion {numeroOp} creada e iniciada.");

@@ -18,5 +18,10 @@ namespace ControlDeCalidadCliente.Presentacion.Presentadores
         {
             AdministradorDeTareas.Instancia.Iniciar<CrearOpTarea>(Vista);
         }
+
+        public void IniciarGestionDeOp()
+        {
+            AdministradorDeTareas.Instancia.Iniciar<GestionarOpTarea>(Vista);
+        }
     }
 }
