@@ -26,6 +26,21 @@ namespace ControlDeCalidadCliente.Presentacion.Vistas
         {
             Presentador.IniciarGestionDeOp();
         }
+
+        private void gestionarOPToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Presentador.IniciarGestionDeOp();
+        }
+
+        private void MenuPrincipalVista_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            CerrarSesion();
+        }
+
+        private void CerrarSesion()
+        {
+            Presentador.CerrarSesion();
+        }
     }
 
     public class MenuPrincipalVistaConPresentador : VistaBaseGenerica<MenuPrincipalPresentador> { }

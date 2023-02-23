@@ -25,5 +25,16 @@ namespace ControlDeCalidadCliente.Presentacion.Vistas
         {
             MessageBox.Show(mensaje, titulo);
         }
+
+        public void Cerrar()
+        {
+            Close();
+        }
+
+        public bool PedirConfirmacion(string titulo, string mensaje)
+        {
+            DialogResult opcion = MessageBox.Show(mensaje, titulo, MessageBoxButtons.YesNo);
+            return opcion == DialogResult.Yes;
+        }
     }
 }

@@ -25,11 +25,12 @@ namespace ControlDeCalidadCliente.Presentacion.Presentadores
         {
             try
             {
+                // Idealmente habria una sola llamada a la API para traer todo
                 Lineas = await Cliente.Instancia.GetTodoAsync<LineaDeTrabajoDTO>("api/Lineas/ObtenerLineas");
                 Vista.PoblarComboBoxLineas();
                 Modelos = await Cliente.Instancia.GetTodoAsync<ModeloDTO>("api/Modelos/ObtenerModelos");
                 Vista.PoblarComboBoxModelos();
-                Colores = await Cliente.Instancia.GetTodoAsync<ColorDTO>("api/Colores/ObtenerColores");
+                Colores = await Cliente.Instancia.GetTodoAsync<ColorDTO>("api/Colores");
                 Vista.PoblarComboBoxColores();
             }
             catch (Exception exc)
@@ -42,12 +43,12 @@ namespace ControlDeCalidadCliente.Presentacion.Presentadores
         {
             try
             {
-                int dni = Sesiones.Sesion.Instancia.DNI;
+                string token = Sesiones.Sesion.Instancia.Datos.Token;
 
                 // Podria sacarse del combobox
                 //string numeroDeLinea = ConfigurationManager.AppSettings.Get("NumeroDeLinea");
 
-                string uri = $"api/Ordenes/CrearOP?numOP={numeroOp}&sku={sku}&codColor={codigo}&numLinea={numeroDeLinea}&supDNI={dni}";
+                string uri = $"api/Ordenes/CrearOP?numOP={numeroOp}&sku={sku}&codColor={codigo}&numLinea={numeroDeLinea}&token={token}";
                 await Cliente.Instancia.AgregarAsync(uri);
 
                 Vista.MostrarMensaje("Operacion Exitosa", $"Orden de produccion {numeroOp} creada e iniciada.");

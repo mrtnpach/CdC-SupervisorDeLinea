@@ -37,6 +37,7 @@ namespace ControlDeCalidadCliente.Presentacion.IoC
             _contenedor.RegisterType<IAutenticacionVista, AutenticacionVista>();
             _contenedor.RegisterType<IMenuPrincipalVista, MenuPrincipalVista>();
             _contenedor.RegisterType<ICrearOpVista, CrearOPVista>();
+            _contenedor.RegisterType<IGestionarOpVista, GestionarOpVista>();
         }
 
         public T Crear<T>()

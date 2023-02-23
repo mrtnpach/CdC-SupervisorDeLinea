@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace ControlDeCalidadCliente.Presentacion.DTOs
 {
     public class ColorDTO
     {
-        public string Codigo { get; set; }
-        public string Descripcion { get; set; }
+        public ColorDTO() { }
+
+        [Required] public string? Codigo { get; set; }
+        [Required] public string? Descripcion { get; set; }
     }
 }

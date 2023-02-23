@@ -9,6 +9,7 @@ namespace ControlDeCalidadCliente.Presentacion.Sesiones
     {
         private static Sesion _instancia;
         private bool _iniciada = false;
+        public SesionDTO Datos { get; private set; }
 
         private Sesion() { }
 
@@ -24,21 +25,11 @@ namespace ControlDeCalidadCliente.Presentacion.Sesiones
             }
         }
 
-        // Esto o un EmpleadoDTO
-        public string Nombre { get;  private set;}
-        public string Apellido { get; private set; }
-        public string CorreoElectronico { get; private set;}
-        public int DNI { get; private set;}
-
-        public void Iniciar(EmpleadoDTO empleado)
+        public void Iniciar(SesionDTO datos)
         {
             if(!_iniciada)
             {
-                Nombre = empleado.Nombre;
-                Apellido = empleado.Apellido;
-                CorreoElectronico = empleado.CorreoElectronico;
-                DNI = empleado.DNI;
-                _iniciada = true;
+                Datos = datos;
             }
         }
     }

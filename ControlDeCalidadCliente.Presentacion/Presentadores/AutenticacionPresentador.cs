@@ -22,20 +22,20 @@ namespace ControlDeCalidadCliente.Presentacion.Presentadores
             try
             {
                 // Se puede aumentar el scope para optimizar
-                string uri = $"api/Autenticacion?correo={correo}&password={password}";
+                string uri = $"api/Autenticacion/IniciarSesion?correo={correo}&password={password}";
 
                 // No es aparente la logica de rechazo, seria mejor mostrarla aqui.
                 // La sesion no inicia solo si el metodo GetAsync lanza una excepcion
-                EmpleadoDTO empleado = await Cliente.Instancia.GetAsync<EmpleadoDTO>(uri);
-                Sesion.Instancia.Iniciar(empleado);
+                SesionDTO datos = await Cliente.Instancia.GetAsync<SesionDTO>(uri);
+                Sesion.Instancia.Iniciar(datos);
 
                 AdministradorDeTareas.Instancia.Iniciar<MenuPrincipalTarea>();
 
                 Vista.CerrarVentana();
             }
-            catch (Exception exc)
+            catch (Exception)
             {
-                Vista.MostrarMensaje("Atencion", exc.Message);
+                Vista.MostrarMensaje("Atencion", "No se pudo iniciar sesion. Verifique sus datos y la conexion al servidor.");
             }
         }
     }

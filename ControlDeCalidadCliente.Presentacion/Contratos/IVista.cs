@@ -9,5 +9,7 @@ namespace ControlDeCalidadCliente.Presentacion.Contratos
         void Mostrar(IVista vistaPadre);
         void MostrarComoDialogo();
         void MostrarMensaje(string titulo, string mensaje);
+        bool PedirConfirmacion(string titulo, string mensaje);
+        void Cerrar();
     }
 }
