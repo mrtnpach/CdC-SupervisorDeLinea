@@ -33,6 +33,7 @@ namespace ControlDeCalidadCliente.Presentacion.Vistas
             this.ordenesDeProduccinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.crearOrdernDeProducciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionarOPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.semaforoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +52,8 @@ namespace ControlDeCalidadCliente.Presentacion.Vistas
             // 
             this.ordenesDeProduccinToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.crearOrdernDeProducciónToolStripMenuItem,
-            this.gestionarOPToolStripMenuItem});
+            this.gestionarOPToolStripMenuItem,
+            this.semaforoToolStripMenuItem});
             this.ordenesDeProduccinToolStripMenuItem.Name = "ordenesDeProduccinToolStripMenuItem";
             this.ordenesDeProduccinToolStripMenuItem.Size = new System.Drawing.Size(177, 24);
             this.ordenesDeProduccinToolStripMenuItem.Text = "Ordenes de Produccion";
@@ -59,16 +61,23 @@ namespace ControlDeCalidadCliente.Presentacion.Vistas
             // crearOrdernDeProducciónToolStripMenuItem
             // 
             this.crearOrdernDeProducciónToolStripMenuItem.Name = "crearOrdernDeProducciónToolStripMenuItem";
-            this.crearOrdernDeProducciónToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
+            this.crearOrdernDeProducciónToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.crearOrdernDeProducciónToolStripMenuItem.Text = "Crear Nueva OP";
             this.crearOrdernDeProducciónToolStripMenuItem.Click += new System.EventHandler(this.crearOrdernDeProduccionToolStripMenuItem_Click);
             // 
             // gestionarOPToolStripMenuItem
             // 
             this.gestionarOPToolStripMenuItem.Name = "gestionarOPToolStripMenuItem";
-            this.gestionarOPToolStripMenuItem.Size = new System.Drawing.Size(196, 26);
+            this.gestionarOPToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.gestionarOPToolStripMenuItem.Text = "Gestionar OP";
             this.gestionarOPToolStripMenuItem.Click += new System.EventHandler(this.gestionarOPToolStripMenuItem_Click_1);
+            // 
+            // semaforoToolStripMenuItem
+            // 
+            this.semaforoToolStripMenuItem.Name = "semaforoToolStripMenuItem";
+            this.semaforoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.semaforoToolStripMenuItem.Text = "Semaforo";
+            this.semaforoToolStripMenuItem.Click += new System.EventHandler(this.semaforoToolStripMenuItem_Click);
             // 
             // MenuPrincipalVista
             // 
@@ -79,7 +88,7 @@ namespace ControlDeCalidadCliente.Presentacion.Vistas
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MenuPrincipalVista";
-            this.Text = "MenuPrincipalVista";
+            this.Text = "Menu Principal";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuPrincipalVista_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -94,5 +103,6 @@ namespace ControlDeCalidadCliente.Presentacion.Vistas
         private System.Windows.Forms.ToolStripMenuItem ordenesDeProduccinToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem crearOrdernDeProducciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionarOPToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem semaforoToolStripMenuItem;
     }
 }

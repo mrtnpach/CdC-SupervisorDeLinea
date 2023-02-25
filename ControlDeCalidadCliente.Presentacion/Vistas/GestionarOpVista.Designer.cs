@@ -243,7 +243,7 @@
             this.Controls.Add(this.tableLayoutPanel);
             this.Name = "GestionarOpVista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "GestionarOpVista";
+            this.Text = "Gestionar Orden de Producción";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.tableLayoutPanel.ResumeLayout(false);
             this.tableLayoutPanel.PerformLayout();

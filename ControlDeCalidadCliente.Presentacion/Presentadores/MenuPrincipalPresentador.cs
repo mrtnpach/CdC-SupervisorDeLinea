@@ -22,10 +22,7 @@ namespace ControlDeCalidadCliente.Presentacion.Presentadores
 
         public void IniciarGestionDeOp()
         {
-            // Hago esto porque el VS no me deja agregar la nueva opcion en el menu,
-            // despues lo saco
-            //AdministradorDeTareas.Instancia.Iniciar<GestionarOpTarea>(Vista);
-            AdministradorDeTareas.Instancia.Iniciar<SemaforoTarea>(Vista);
+            AdministradorDeTareas.Instancia.Iniciar<GestionarOpTarea>(Vista);
         }
 
         public void MostrarSemaforo()

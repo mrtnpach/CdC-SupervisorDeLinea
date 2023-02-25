@@ -32,6 +32,11 @@ namespace ControlDeCalidadCliente.Presentacion.Vistas
             Presentador.IniciarGestionDeOp();
         }
 
+        private void semaforoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Presentador.MostrarSemaforo();
+        }
+
         private void MenuPrincipalVista_FormClosing(object sender, FormClosingEventArgs e)
         {
             CerrarSesion();

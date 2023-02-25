@@ -33,10 +33,10 @@ namespace ControlDeCalidadCliente.Presentacion.Vistas
             this.semaforoObservado = new System.Windows.Forms.Label();
             this.semaforoReproceso = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.observadosListView = new System.Windows.Forms.ListView();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
             this.reprocesoListView = new System.Windows.Forms.ListView();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -97,6 +97,31 @@ namespace ControlDeCalidadCliente.Presentacion.Vistas
             this.tableLayoutPanel2.Size = new System.Drawing.Size(568, 305);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.SeaGreen;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(562, 60);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Observados";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // observadosListView
+            // 
+            this.observadosListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.observadosListView.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.observadosListView.HideSelection = false;
+            this.observadosListView.Location = new System.Drawing.Point(3, 63);
+            this.observadosListView.Name = "observadosListView";
+            this.observadosListView.Size = new System.Drawing.Size(562, 239);
+            this.observadosListView.TabIndex = 1;
+            this.observadosListView.UseCompatibleStateImageBehavior = false;
+            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 1;
@@ -113,20 +138,6 @@ namespace ControlDeCalidadCliente.Presentacion.Vistas
             this.tableLayoutPanel3.Size = new System.Drawing.Size(568, 306);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.SeaGreen;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(562, 60);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Observados";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -140,17 +151,6 @@ namespace ControlDeCalidadCliente.Presentacion.Vistas
             this.label2.TabIndex = 0;
             this.label2.Text = "Reproceso";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // observadosListView
-            // 
-            this.observadosListView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.observadosListView.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.observadosListView.HideSelection = false;
-            this.observadosListView.Location = new System.Drawing.Point(3, 63);
-            this.observadosListView.Name = "observadosListView";
-            this.observadosListView.Size = new System.Drawing.Size(562, 239);
-            this.observadosListView.TabIndex = 1;
-            this.observadosListView.UseCompatibleStateImageBehavior = false;
             // 
             // reprocesoListView
             // 
@@ -171,7 +171,7 @@ namespace ControlDeCalidadCliente.Presentacion.Vistas
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "SemaforoVista";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "SemaforoVista";
+            this.Text = "Semaforo";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
