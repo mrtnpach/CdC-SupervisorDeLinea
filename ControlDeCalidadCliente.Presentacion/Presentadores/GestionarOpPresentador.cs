@@ -73,7 +73,8 @@ namespace ControlDeCalidadCliente.Presentacion.Presentadores
         {
             try
             {
-                string uri = $"api/Ordenes/ReanudarOp?numOP={_orden.Numero}";
+                string token = Sesion.Instancia.Datos.Token;
+                string uri = $"api/Ordenes/ReanudarOp?numOP={_orden.Numero}&token={token}";
                 await Cliente.Instancia.ModificarAsync(uri);
 
                 // Mostrar datos actualizados
@@ -89,7 +90,8 @@ namespace ControlDeCalidadCliente.Presentacion.Presentadores
         {
             try
             {
-                string uri = $"api/Ordenes/PausarOp?numOP={_orden.Numero}";
+                string token = Sesion.Instancia.Datos.Token;
+                string uri = $"api/Ordenes/PausarOp?numOP={_orden.Numero}&token={token}";
                 await Cliente.Instancia.ModificarAsync(uri);
 
                 // Mostrar datos actualizados
@@ -105,7 +107,8 @@ namespace ControlDeCalidadCliente.Presentacion.Presentadores
         {
             try
             {
-                string uri = $"api/Ordenes/FinalizarOp?numOP={_orden.Numero}";
+                string token = Sesion.Instancia.Datos.Token;
+                string uri = $"api/Ordenes/FinalizarOp?numOP={_orden.Numero}&token={token}";
                 await Cliente.Instancia.ModificarAsync(uri);
 
                 // Pedir confirmacion
@@ -114,6 +117,8 @@ namespace ControlDeCalidadCliente.Presentacion.Presentadores
                 bool opcion = Vista.PedirConfirmacion("Finalizar Orden", "¿Desea finalizar la orden de produccion?");
                 if (opcion)
                 {
+                    string linea = _orden.Linea.Numero.ToString();
+                    await Cliente.Instancia.Semaforo.AbandonarLinea(linea);
                     Vista.MostrarMensaje("Operacion Exitosa", $"La Orden {_orden.Numero} finalizo exitosamente.");
                     Vista.Cerrar();
                 }

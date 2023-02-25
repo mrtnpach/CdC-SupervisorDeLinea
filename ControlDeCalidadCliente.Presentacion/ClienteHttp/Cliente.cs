@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.SignalR.Client;
 
 namespace ControlDeCalidadCliente.Presentacion.ClienteHttp
 {
-    // Aqui o en otro proyecto
     public class Cliente
     {
         private HttpClient _cliente;
+        public ClienteSemaforo Semaforo {get; private set;}
 
         #region Singleton
         private static volatile Cliente _instancia;
@@ -19,6 +21,7 @@ namespace ControlDeCalidadCliente.Presentacion.ClienteHttp
         private Cliente()
         {
             Configurar();
+            Semaforo = new ClienteSemaforo();
         }
 
         public static Cliente Instancia
@@ -39,8 +42,7 @@ namespace ControlDeCalidadCliente.Presentacion.ClienteHttp
 
         private void Configurar()
         {
-            //string uriBase = System.Configuration.ConfigurationManager.AppSettings.Get("URIBase");
-            string uriBase = "https://localhost:5001/";
+            string uriBase = ConfigurationManager.ConnectionStrings["ControlDeCalidad"].ConnectionString;
             _cliente = new HttpClient();
             _cliente.BaseAddress = new Uri(uriBase);
 
@@ -50,6 +52,7 @@ namespace ControlDeCalidadCliente.Presentacion.ClienteHttp
                 new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
+        #region Operaciones REST
         public async Task<List<T>> GetTodoAsync<T>(string path)
         {
             List<T> items = new List<T>();
@@ -112,5 +115,6 @@ namespace ControlDeCalidadCliente.Presentacion.ClienteHttp
                 throw new Exception(mensaje);
             }
         }
+        #endregion Operaciones REST
     }
 }

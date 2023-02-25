@@ -30,7 +30,7 @@ namespace ControlDeCalidadCliente.Presentacion.Presentadores
                 Vista.PoblarComboBoxLineas();
                 Modelos = await Cliente.Instancia.GetTodoAsync<ModeloDTO>("api/Modelos/ObtenerModelos");
                 Vista.PoblarComboBoxModelos();
-                Colores = await Cliente.Instancia.GetTodoAsync<ColorDTO>("api/Colores");
+                Colores = await Cliente.Instancia.GetTodoAsync<ColorDTO>("api/Colores/ObtenerColores");
                 Vista.PoblarComboBoxColores();
             }
             catch (Exception exc)
@@ -50,6 +50,7 @@ namespace ControlDeCalidadCliente.Presentacion.Presentadores
 
                 string uri = $"api/Ordenes/CrearOP?numOP={numeroOp}&sku={sku}&codColor={codigo}&numLinea={numeroDeLinea}&token={token}";
                 await Cliente.Instancia.AgregarAsync(uri);
+                await Cliente.Instancia.Semaforo.UnirseALinea(numeroDeLinea);
 
                 Vista.MostrarMensaje("Operacion Exitosa", $"Orden de produccion {numeroOp} creada e iniciada.");
             }

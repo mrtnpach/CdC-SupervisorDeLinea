@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ControlDeCalidadCliente.Presentacion.Contratos
 {
-    public interface ISemaforoVista
+    public interface ISemaforoVista : IVista
     {
     }
 }
