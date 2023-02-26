@@ -2,12 +2,7 @@
 using ControlDeCalidadCliente.Presentacion.Presentadores;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
 
 namespace ControlDeCalidadCliente.Presentacion.Vistas
 {
@@ -21,10 +16,10 @@ namespace ControlDeCalidadCliente.Presentacion.Vistas
         public void ActualizarListas(List<string> topObservado, List<string> topReproceso)
         {
             // Hay problemas de hilos al actualizar los datos
-            if (InvokeRequired) 
+            if (InvokeRequired)
                 BeginInvoke((Action)(() => { MostrarDefectos(topObservado, topReproceso); }));
-            else 
-                MostrarDefectos(topObservado, topReproceso);        
+            else
+                MostrarDefectos(topObservado, topReproceso);
         }
 
         public void ActualizarSemaforos(string colorObservado, string colorReproceso)
@@ -47,7 +42,7 @@ namespace ControlDeCalidadCliente.Presentacion.Vistas
             switch (colorReproceso)
             {
                 case "Verde":
-                    semaforoReproceso.BackColor = Color.Green; 
+                    semaforoReproceso.BackColor = Color.Green;
                     break;
                 case "Amarillo":
                     semaforoReproceso.BackColor = Color.Yellow;
@@ -87,6 +82,7 @@ namespace ControlDeCalidadCliente.Presentacion.Vistas
         {
             foreach (string defecto in topObservado)
             {
+                // Hace un push, los deja al reves
                 observadosListView.Items.Add(defecto);
             }
         }

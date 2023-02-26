@@ -81,13 +81,13 @@ namespace ControlDeCalidadCliente.Presentacion.Presentadores
             }
         }
 
-        public void MostrarAlertaInferior(string linea, string numero, string tipo)
+        public void MostrarAlertaInferior(string numero, string linea, string tipo)
         {
             Vista.MostrarMensaje(
                 "Alerta", $"La orden {numero} sobre la linea {linea} alcanzo su limite de {tipo}");
         }
 
-        public void MostrarAlertaSuperior(string linea, string numero, string tipo)
+        public void MostrarAlertaSuperior(string numero, string linea, string tipo)
         {
             Vista.MostrarMensaje(
                 "Alerta", $"La orden {numero} sobre la linea {linea} alcanzo su limite superior de {tipo}");
