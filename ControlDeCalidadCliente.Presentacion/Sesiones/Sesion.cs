@@ -1,7 +1,4 @@
 ﻿using ControlDeCalidadCliente.Presentacion.DTOs;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ControlDeCalidadCliente.Presentacion.Sesiones
 {

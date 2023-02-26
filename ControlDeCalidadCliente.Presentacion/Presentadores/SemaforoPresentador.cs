@@ -18,15 +18,14 @@ namespace ControlDeCalidadCliente.Presentacion.Presentadores
 
         public SemaforoPresentador(ISemaforoVista vista) : base(vista)
         {
-            //Inicializar();
-            // Suscribir a la actualizacion de la lista
+            Inicializar();
+            //Suscribir a la actualizacion de la lista
         }
 
         private async void Inicializar()
         {
             await ObtenerOrdenAsociada();
-            //await SuscribirAAlertas();
-            //await SuscribirASemaforo();
+            await Cliente.Instancia.Semaforo.SuscribirADatosEnLinea(ActualizarDatos);
         }
 
         private async Task ObtenerOrdenAsociada()
@@ -51,26 +50,10 @@ namespace ControlDeCalidadCliente.Presentacion.Presentadores
             }
         }
 
-        private void OnLimiteInferiorAlcanzado(object o, string limite)
+        public void ActualizarDatos(SemaforoDTO semaforoDTO)
         {
-            Vista.MostrarMensaje("Alerta", "Limite alcanzado");
-        }
-        
-        private void OnLimiteSuperiorAlcanzado()
-        {
-
-        }
-
-        private async Task SuscribirASemaforo()
-        {
-            try
-            {
-                //await Cliente.Instancia.SuscribirASemaforoHub(_orden.Linea.Numero.ToString());
-            }
-            catch (Exception exc)
-            {
-                Vista.MostrarMensaje("Atencion", "No se pudo establecer conexion con el semaforo");
-            }
+            Vista.ActualizarListas(semaforoDTO.TopObservado, semaforoDTO.TopReproceso);
+            Vista.ActualizarSemaforos(semaforoDTO.ColorSemaforoObservado, semaforoDTO.ColorSemaforoReproceso);
         }
     }
 }

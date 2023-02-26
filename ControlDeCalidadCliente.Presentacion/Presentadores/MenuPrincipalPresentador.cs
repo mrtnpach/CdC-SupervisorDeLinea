@@ -3,6 +3,8 @@ using ControlDeCalidadCliente.Presentacion.Sesiones;
 using ControlDeCalidadCliente.Presentacion.Tareas;
 using ControlDeCalidadCliente.Presentacion.ClienteHttp;
 using System;
+using ControlDeCalidadCliente.Presentacion.DTOs;
+using System.Threading.Tasks;
 
 namespace ControlDeCalidadCliente.Presentacion.Presentadores
 {
@@ -11,13 +13,13 @@ namespace ControlDeCalidadCliente.Presentacion.Presentadores
     {
         public MenuPrincipalPresentador(IMenuPrincipalVista vista) : base(vista)
         {
+            ObtenerDatosDeOrden();
             SuscribirASemaforo();
         }
 
         public void IniciarCreacionDeOp()
         {
             AdministradorDeTareas.Instancia.Iniciar<CrearOpTarea>(Vista);
-            Cliente.Instancia.Semaforo.EnviarMensaje("Hola");
         }
 
         public void IniciarGestionDeOp()
@@ -28,6 +30,26 @@ namespace ControlDeCalidadCliente.Presentacion.Presentadores
         public void MostrarSemaforo()
         {
             AdministradorDeTareas.Instancia.Iniciar<SemaforoTarea>(Vista);
+        }
+
+        private async Task ObtenerDatosDeOrden()
+        {
+            try
+            {
+                string token = Sesion.Instancia.Datos.Token;
+                string uri = $"api/Ordenes/MiOp/{Uri.EscapeDataString(token)}";
+                OrdenDTO op = await Cliente.Instancia.GetAsync<OrdenDTO>(uri);
+                if (op != null)
+                {
+                    string linea = op.Linea.Numero.ToString();
+                    string numOp = op.Numero;
+                    await Cliente.Instancia.Semaforo.UnirseALinea(linea, numOp);
+                }
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         public async void CerrarSesion()

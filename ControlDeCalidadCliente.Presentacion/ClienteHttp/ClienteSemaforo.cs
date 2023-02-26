@@ -23,12 +23,12 @@ namespace ControlDeCalidadCliente.Presentacion.ClienteHttp
             await _hubConnection.StartAsync();
         }
 
-        public async Task UnirseALinea(string linea)
+        public async Task UnirseALinea(string linea, string numOp)
         {
             if(_hubConnection.State == HubConnectionState.Disconnected)
                 await _hubConnection.StartAsync();
 
-            await _hubConnection.InvokeAsync("UnirseALinea", linea);
+            await _hubConnection.InvokeAsync("UnirseALinea", linea, numOp);
         }
 
         public async Task AbandonarLinea(string linea)
@@ -50,7 +50,7 @@ namespace ControlDeCalidadCliente.Presentacion.ClienteHttp
 
         public async Task SuscribirADatosEnLinea(Action<SemaforoDTO> metodoCliente)
         {
-            _hubConnection.On("ActualizarDatos", metodoCliente);
+            _hubConnection.On("ActualizarSemaforo", metodoCliente);
 
             if (_hubConnection.State == HubConnectionState.Disconnected)
                 await _hubConnection.StartAsync();

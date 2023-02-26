@@ -50,7 +50,8 @@ namespace ControlDeCalidadCliente.Presentacion.Presentadores
 
                 string uri = $"api/Ordenes/CrearOP?numOP={numeroOp}&sku={sku}&codColor={codigo}&numLinea={numeroDeLinea}&token={token}";
                 await Cliente.Instancia.AgregarAsync(uri);
-                await Cliente.Instancia.Semaforo.UnirseALinea(numeroDeLinea);
+                await Cliente.Instancia.Semaforo.UnirseALinea(numeroDeLinea, numeroOp);
+
 
                 Vista.MostrarMensaje("Operacion Exitosa", $"Orden de produccion {numeroOp} creada e iniciada.");
             }
