@@ -4,9 +4,6 @@ using ControlDeCalidadCliente.Presentacion.DTOs;
 using ControlDeCalidadCliente.Presentacion.Sesiones;
 using ControlDeCalidadCliente.Presentacion.Tareas;
 using System;
-using System.Collections.Generic;
-using System.Security.Cryptography.Pkcs;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace ControlDeCalidadCliente.Presentacion.Presentadores

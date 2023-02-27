@@ -42,13 +42,13 @@ namespace ControlDeCalidadCliente.Presentacion.Vistas
             switch (colorReproceso)
             {
                 case "Verde":
-                    label1.BackColor = Color.Green;
+                    semaforoReproceso.BackColor = Color.Green;
                     break;
                 case "Amarillo":
-                    label1.BackColor = Color.Yellow;
+                    semaforoReproceso.BackColor = Color.Yellow;
                     break;
                 case "Rojo":
-                    label1.BackColor = Color.Red;
+                    semaforoReproceso.BackColor = Color.Red;
                     break;
             }
         }
@@ -58,13 +58,13 @@ namespace ControlDeCalidadCliente.Presentacion.Vistas
             switch (colorObservado)
             {
                 case "Verde":
-                    label1.BackColor = Color.Green;
+                    semaforoObservado.BackColor = Color.Green;
                     break;
                 case "Amarillo":
-                    label1.BackColor = Color.Yellow;
+                    semaforoObservado.BackColor = Color.Yellow;
                     break;
                 case "Rojo":
-                    label1.BackColor = Color.Red;
+                    semaforoObservado.BackColor = Color.Red;
                     break;
             }
         }
@@ -80,18 +80,19 @@ namespace ControlDeCalidadCliente.Presentacion.Vistas
 
         private void AgregarDefectosDeObservado(List<string> topObservado)
         {
-            foreach (string defecto in topObservado)
+            for (int i = 0; i < topObservado.Count; i++)
             {
-                // Hace un push, los deja al reves
-                observadosListView.Items.Add(defecto);
+                string item = $"{i + 1} - {topObservado[i]}";
+                observadosListView.Items.Add(item);
             }
         }
 
         private void AgregarDefectosDeReproceso(List<string> topReproceso)
         {
-            foreach (string defecto in topReproceso)
+            for (int i = 0; i < topReproceso.Count; i++)
             {
-                reprocesoListView.Items.Add(defecto);
+                string item = $"{i + 1} - {topReproceso[i]}";
+                reprocesoListView.Items.Add(item);
             }
         }
     }
