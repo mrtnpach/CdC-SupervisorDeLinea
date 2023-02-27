@@ -42,13 +42,13 @@ namespace ControlDeCalidadCliente.Presentacion.Vistas
             switch (colorReproceso)
             {
                 case "Verde":
-                    semaforoReproceso.BackColor = Color.Green;
+                    label1.BackColor = Color.Green;
                     break;
                 case "Amarillo":
-                    semaforoReproceso.BackColor = Color.Yellow;
+                    label1.BackColor = Color.Yellow;
                     break;
                 case "Rojo":
-                    semaforoReproceso.BackColor = Color.Red;
+                    label1.BackColor = Color.Red;
                     break;
             }
         }
@@ -58,13 +58,13 @@ namespace ControlDeCalidadCliente.Presentacion.Vistas
             switch (colorObservado)
             {
                 case "Verde":
-                    semaforoObservado.BackColor = Color.Green;
+                    label1.BackColor = Color.Green;
                     break;
                 case "Amarillo":
-                    semaforoObservado.BackColor = Color.Yellow;
+                    label1.BackColor = Color.Yellow;
                     break;
                 case "Rojo":
-                    semaforoObservado.BackColor = Color.Red;
+                    label1.BackColor = Color.Red;
                     break;
             }
         }
