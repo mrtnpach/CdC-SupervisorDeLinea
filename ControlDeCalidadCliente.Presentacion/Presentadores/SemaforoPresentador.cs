@@ -16,13 +16,22 @@ namespace ControlDeCalidadCliente.Presentacion.Presentadores
         public SemaforoPresentador(ISemaforoVista vista) : base(vista)
         {
             Inicializar();
-            //Suscribir a la actualizacion de la lista
+            
         }
 
         private async void Inicializar()
         {
             await ObtenerOrdenAsociada();
             await Cliente.Instancia.Semaforo.SuscribirADatosEnLinea(ActualizarDatos);
+            await MostrarDatosIniciales();
+        }
+
+        private async Task MostrarDatosIniciales()
+        {
+            string uri = $"api/Inspeccion/ObtenerDatosEnLinea?numeroLinea={_orden.Linea.Numero}";
+            SemaforoDTO datosIniciales =
+                            await Cliente.Instancia.GetAsync<SemaforoDTO>(uri);
+            ActualizarDatos(datosIniciales);
         }
 
         private async Task ObtenerOrdenAsociada()
@@ -45,6 +54,11 @@ namespace ControlDeCalidadCliente.Presentacion.Presentadores
                 Vista.MostrarMensaje("Atencion", "No tiene una Orden de Produccion asociada.");
                 Vista.Cerrar();
             }
+        }
+
+        private async void MostrarDatos()
+        {
+
         }
 
         public void ActualizarDatos(SemaforoDTO semaforoDTO)
